@@ -81,7 +81,8 @@ const createSlug = (title) => {
 
 const create = (req, res) => {
   const { title, content, tags } = req.body;
-  const image = req.file.filename;
+
+  const image = req.file?.filename;
 
   if (!title || !content || !tags || !image) {
     return res.status(400).send("Dati mancanti.");
